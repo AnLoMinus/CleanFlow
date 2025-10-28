@@ -1,0 +1,52 @@
+{
+  "name": "cleanflow",
+  "version": "1.0.0",
+  "description": "CleanFlow - מערכת כללים לסדר וארגון החדר עם תמיכה רב-לשונית",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Building CleanFlow...'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'Linting...'",
+    "translate": "node scripts/translate.js"
+  },
+  "keywords": [
+    "cleanflow",
+    "organization",
+    "room-cleaning",
+    "multilingual",
+    "hebrew",
+    "english",
+    "russian",
+    "arabic",
+    "chinese",
+    "hindi",
+    "i18n",
+    "l10n"
+  ],
+  "author": {
+    "name": "AnLoMinus",
+    "url": "https://github.com/AnLoMinus"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnLoMinus/CleanFlow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnLoMinus/CleanFlow/issues"
+  },
+  "homepage": "https://anlominus.github.io/CleanFlow",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

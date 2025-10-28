@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "language": "English",
+    "code": "en",
+    "direction": "ltr",
+    "version": "1.0.0"
+  },
+  "title": "CleanFlow (CF) – Room Organization & Cleaning Guidelines",
+  "subtitle": "\"A place for everything, and everything in its place\" 🧼✨",
+  "brand": "CleanFlow • CF",
+  "date": {
+    "gregorian": "Gregorian Date",
+    "hebrew": "Hebrew Date",
+    "time": "Time"
+  },
+  "sections": {
+    "fundamentals": {
+      "title": "Fundamental Principles",
+      "emoji": "🏡",
+      "items": [
+        "A place for everything, and everything in its place.",
+        "Order saves time and creates inner peace.",
+        "Clean environment = clear mind = open heart.",
+        "Daily routine of 5-10 minutes of tidying."
+      ],
+      "tip": "Tip: Establish a \"return point\" for every item 🧭"
+    },
+    "daily": {
+      "title": "Daily Actions",
+      "emoji": "🧽",
+      "items": [
+        "Make the bed immediately after waking up 🛏️",
+        "Clothes: to closet/laundry basket 🧺",
+        "Clear desk of unnecessary surfaces 🧼",
+        "Daily trash disposal 🗑️",
+        "Ventilate the room at least once a day 💨"
+      ]
+    },
+    "weekly": {
+      "title": "Weekly Actions",
+      "emoji": "📅",
+      "items": [
+        "Thorough floor cleaning: corner to corner 🧹",
+        "Clean shelves/windows/doors 🪟",
+        "Clothes sorting: fold / donate / discard 👕",
+        "Energy refresh: good scent/music 🌿"
+      ],
+      "note": "Note: Set a fixed day of the week for general \"Reset\"."
+    },
+    "organization": {
+      "title": "Item Organization",
+      "emoji": "📦",
+      "items": [
+        "Storage by categories: technology / clothes / papers / hobbies",
+        "Numbered boxes/drawers + labels 🏷️",
+        "Clear tagging (name/color/icon) for each box",
+        "90-day rule: not in use? consider donation/disposal ⏳"
+      ]
+    },
+    "mental": {
+      "title": "Mental Rules",
+      "emoji": "🧘",
+      "items": [
+        "Don't go to sleep when the room is messy 🌙",
+        "Start the day in a clean and organized room 🌞",
+        "Physical cleanliness attracts inner cleanliness 🕊️",
+        "The room is a mirror of consciousness – order inside and out 🪞"
+      ]
+    },
+    "goldenMinutes": {
+      "title": "\"3 Golden Minutes\" – Every Entry",
+      "emoji": "⏱️",
+      "items": [
+        "Locate an item that's not in its place",
+        "Return it to its return point",
+        "Bring in light/air: open window or good scent"
+      ]
+    },
+    "motivation": {
+      "title": "Motivational Quote",
+      "emoji": "🪄",
+      "text": "If you don't control your environment – your environment controls you. Turn your room into a small sanctuary of peace and light 🕯️"
+    }
+  },
+  "footer": {
+    "verse": "\"And thy camp shall be holy\" (Deuteronomy 23:15) – An organized room attracts holiness, calm and joy.",
+    "credits": {
+      "copyright": "© CleanFlow (CF)",
+      "design": "Design & Content:",
+      "related": "Related Repositories:"
+    },
+    "note": "Note: Can be edited/printed. Checkboxes will reset after page refresh."
+  },
+  "languageSelector": {
+    "label": "Select Language:",
+    "languages": {
+      "he": "עברית",
+      "en": "English",
+      "ru": "Русский",
+      "ar": "العربية",
+      "zh": "中文",
+      "hi": "हिन्दी"
+    }
+  }
+}

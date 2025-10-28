@@ -1,187 +1,181 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
   <meta charset="utf-8" />
-  <title>CleanFlow (CF) – דף A4 להדפסה: כללי סדר וארגון</title>
+  <title>CleanFlow (CF) – דף כללי סדר וארגון לחדר</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    /* --- A4 print setup --- */
-    @page { size: A4; margin: 12mm; }
-    @media print {
-      .no-print { display:none !important; }
-      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    }
+  <meta name="description" content="CleanFlow - מערכת כללים לסדר וארגון החדר עם תמיכה רב-לשונית" />
+  <meta name="keywords"
+    content="cleanflow, organization, room cleaning, multilingual, hebrew, english, russian, arabic, chinese, hindi" />
+  <meta name="author" content="AnLoMinus" />
 
-    /* --- Design Tokens --- */
-    :root{
-      --ink:#0f172a;      /* slate-900 */
-      --sub:#475569;      /* slate-600 */
-      --frame:#e2e8f0;    /* slate-200 */
-      --accent:#2563eb;   /* blue-600 */
-      --accent-2:#0ea5e9; /* sky-500 */
-      --ok:#16a34a;       /* green-600 */
-      --warn:#d97706;     /* amber-600 */
-      --paper:#ffffff;
-    }
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="CleanFlow - Room Organization Guidelines" />
+  <meta property="og:description" content="A comprehensive multilingual guide for room organization and cleaning" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anlominus.github.io/CleanFlow" />
 
-    /* --- Base --- */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; background:var(--paper); color:var(--ink);
-      font-family:"Rubik","Noto Sans Hebrew","Assistant",system-ui,Segoe UI,Arial,Helvetica,sans-serif;
-      line-height:1.45; font-size:12.25pt;
-    }
-
-    /* --- Layout Card --- */
-    .sheet{
-      border:1.2mm solid var(--frame); border-radius:10px; padding:12mm;
-      background:linear-gradient(180deg,#ffffff 0%, #f8fbff 60%, #ffffff 100%);
-    }
-
-    header{
-      display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center;
-      border-bottom:1.2mm solid var(--frame); padding-bottom:8px; margin-bottom:10px;
-    }
-    .brand{
-      display:flex; gap:8px; align-items:center; flex-wrap:wrap;
-    }
-    .badge{
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      color:#fff; padding:4px 10px; border-radius:999px; font-weight:700; font-size:12pt;
-      box-shadow:0 1px 0 rgba(0,0,0,.08);
-    }
-    .title{font-size:20pt; font-weight:800; letter-spacing:.2px}
-    .subtitle{color:var(--sub); font-weight:500}
-
-    .meta{
-      text-align:left; color:var(--sub); font-size:10.5pt; line-height:1.25;
-    }
-
-    /* --- Sections --- */
-    h2{font-size:14.6pt; margin:10px 0 6px; color:var(--accent); display:flex; align-items:center; gap:6px}
-    h2 .emo{font-size:15pt}
-    .grid{
-      display:grid; grid-template-columns:repeat(2,1fr); gap:10px; align-items:start;
-    }
-    .box{
-      border:1px solid var(--frame); border-radius:10px; padding:10px; background:#fff;
-    }
-
-    /* --- Checklist --- */
-    .checklist{display:grid; grid-template-columns:18px 1fr; gap:8px; align-items:start; margin:6px 0}
-    .checklist input{width:18px; height:18px; margin-top:2px}
-    .note{color:var(--sub); font-size:10.5pt}
-
-    /* --- Footer --- */
-    footer{
-      border-top:1.2mm solid var(--frame); margin-top:10px; padding-top:8px; display:grid; gap:4px;
-      font-size:10.75pt; color:var(--sub);
-    }
-    .credits{display:flex; gap:12px; flex-wrap:wrap}
-    .credits a{color:var(--accent); text-decoration:none}
-    .psuk{font-weight:600; color:var(--ink)}
-    .psuk small{color:var(--sub); font-weight:500}
-
-    /* --- Helpers --- */
-    .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-    .pill{border:1px dashed var(--frame); border-radius:10px; padding:6px 10px; font-size:10.5pt; color:var(--sub)}
-    .accent{color:var(--accent)}
-  </style>
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
+  <!-- Language Selector -->
+  <div class="language-selector no-print">
+    <label id="language-label" for="language-selector">בחר שפה:</label>
+    <select id="language-selector">
+      <option value="he">עברית</option>
+      <option value="en">English</option>
+      <option value="ru">Русский</option>
+      <option value="ar">العربية</option>
+      <option value="zh">中文</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+  </div>
+
   <div class="sheet">
     <header>
       <div class="brand">
-        <span class="badge">CleanFlow • CF</span>
+        <span class="badge" id="brand-text">CleanFlow • CF</span>
         <div>
-          <div class="title">🧭 דף כללי סדר וארגון לחדר</div>
-          <div class="subtitle">"לכל דבר מקום – וכל דבר במקומו" 🧼✨</div>
+          <div class="title" id="main-title">🧭 דף כללי סדר וארגון לחדר</div>
+          <div class="subtitle" id="main-subtitle">"לכל דבר מקום – וכל דבר במקומו" 🧼✨</div>
         </div>
       </div>
       <div class="meta">
-        <div>📅 תאריך לועזי: <span id="greg-date" class="mono"></span></div>
-        <div>🗓️ תאריך עברי: <span id="heb-date" class="mono">כ״ו בתשרי ה׳תשפ״ו</span></div>
-        <div>🕒 שעה: <span id="time-now" class="mono"></span> (Asia/Jerusalem)</div>
+        <div><span id="greg-label">📅 תאריך לועזי:</span> <span id="greg-date" class="mono"></span></div>
+        <div><span id="heb-label">🗓️ תאריך עברי:</span> <span id="heb-date" class="mono">כ״ו בתשרי ה׳תשפ״ו</span></div>
+        <div><span id="time-label">🕒 שעה:</span> <span id="time-now" class="mono"></span> (Asia/Jerusalem)</div>
       </div>
     </header>
 
     <!-- עקרונות ויסוד + פעולות יומיות -->
     <section class="grid">
-      <div class="box">
-        <h2><span class="emo">🏡</span> עקרונות יסוד</h2>
-        <label class="checklist"><input type="checkbox"/><div>לכל דבר מקום – וכל דבר במקומו.</div></label>
-        <label class="checklist"><input type="checkbox"/><div>סדר חוסך זמן ומייצר שקט פנימי.</div></label>
-        <label class="checklist"><input type="checkbox"/><div>סביבה נקייה = ראש נקי = לב פתוח.</div></label>
-        <label class="checklist"><input type="checkbox"/><div>שגרה יומית של 5–10 דקות סידור.</div></label>
-        <div class="pill">טיפ: קבע "נקודת חזרה" לכל חפץ 🧭</div>
+      <div class="box" id="fundamentals">
+        <h2 class="section-title"><span class="emoji">🏡</span> עקרונות יסוד</h2>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">לכל דבר מקום – וכל דבר במקומו.</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">סדר חוסך זמן ומייצר שקט פנימי.</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">סביבה נקייה = ראש נקי = לב פתוח.</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">שגרה יומית של 5–10 דקות סידור.</div>
+        </label>
+        <div class="pill section-tip">טיפ: קבע "נקודת חזרה" לכל חפץ 🧭</div>
       </div>
 
-      <div class="box">
-        <h2><span class="emo">🧽</span> פעולות יומיות</h2>
-        <label class="checklist"><input type="checkbox"/><div>לסדר מיטה מיד לאחר הקימה 🛏️</div></label>
-        <label class="checklist"><input type="checkbox"/><div>בגדים: לארון/סל כביסה 🧺</div></label>
-        <label class="checklist"><input type="checkbox"/><div>פינוי שולחן ממשטחים מיותרים 🧼</div></label>
-        <label class="checklist"><input type="checkbox"/><div>פינוי אשפה יומי 🗑️</div></label>
-        <label class="checklist"><input type="checkbox"/><div>אוורור החדר לפחות פעם ביום 💨</div></label>
+      <div class="box" id="daily">
+        <h2 class="section-title"><span class="emoji">🧽</span> פעולות יומיות</h2>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">לסדר מיטה מיד לאחר הקימה 🛏️</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">בגדים: לארון/סל כביסה 🧺</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">פינוי שולחן ממשטחים מיותרים 🧼</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">פינוי אשפה יומי 🗑️</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">אוורור החדר לפחות פעם ביום 💨</div>
+        </label>
       </div>
     </section>
 
     <!-- פעולות שבועיות + ארגון חפצים -->
     <section class="grid">
-      <div class="box">
-        <h2><span class="emo">📅</span> פעולות שבועיות</h2>
-        <label class="checklist"><input type="checkbox"/><div>ניקוי רצפה יסודי: פינה לפינה 🧹</div></label>
-        <label class="checklist"><input type="checkbox"/><div>ניקוי מדפים/חלונות/דלתות 🪟</div></label>
-        <label class="checklist"><input type="checkbox"/><div>מיון בגדים: קיפול / תרומה / השלכה 👕</div></label>
-        <label class="checklist"><input type="checkbox"/><div>רענון אנרגיה: ריח טוב/מוזיקה 🌿</div></label>
-        <div class="note">הערה: קבע יום קבוע בשבוע ל"Reset" כללי.</div>
+      <div class="box" id="weekly">
+        <h2 class="section-title"><span class="emoji">📅</span> פעולות שבועיות</h2>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">ניקוי רצפה יסודי: פינה לפינה 🧹</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">ניקוי מדפים/חלונות/דלתות 🪟</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">מיון בגדים: קיפול / תרומה / השלכה 👕</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">רענון אנרגיה: ריח טוב/מוזיקה 🌿</div>
+        </label>
+        <div class="note section-note">הערה: קבע יום קבוע בשבוע ל"Reset" כללי.</div>
       </div>
 
-      <div class="box">
-        <h2><span class="emo">📦</span> ארגון חפצים</h2>
-        <label class="checklist"><input type="checkbox"/><div>אחסון לפי קטגוריות: טכנולוגיה / בגדים / ניירת / תחביבים</div></label>
-        <label class="checklist"><input type="checkbox"/><div>קופסאות/מגירות ממוספרות + מדבקות 🏷️</div></label>
-        <label class="checklist"><input type="checkbox"/><div>תיוג ברור (שם/צבע/אייקון) לכל קופסה</div></label>
-        <label class="checklist"><input type="checkbox"/><div>כלל 90 הימים: לא בשימוש? לשקול תרומה/הוצאה ⏳</div></label>
+      <div class="box" id="organization">
+        <h2 class="section-title"><span class="emoji">📦</span> ארגון חפצים</h2>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">אחסון לפי קטגוריות: טכנולוגיה / בגדים / ניירת / תחביבים</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">קופסאות/מגירות ממוספרות + מדבקות 🏷️</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">תיוג ברור (שם/צבע/אייקון) לכל קופסה</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">כלל 90 הימים: לא בשימוש? לשקול תרומה/הוצאה ⏳</div>
+        </label>
       </div>
     </section>
 
     <!-- שכבת מנטליות + 3 דקות זהב -->
     <section class="grid">
-      <div class="box">
-        <h2><span class="emo">🧘</span> כללים מנטליים</h2>
-        <label class="checklist"><input type="checkbox"/><div>לא הולכים לישון כשהחדר מבולגן 🌙</div></label>
-        <label class="checklist"><input type="checkbox"/><div>פותחים יום בחדר נקי ומסודר 🌞</div></label>
-        <label class="checklist"><input type="checkbox"/><div>ניקיון פיזי מושך ניקיון פנימי 🕊️</div></label>
-        <label class="checklist"><input type="checkbox"/><div>החדר הוא מראה לתודעה – סדר בפנים ובחוץ 🪞</div></label>
+      <div class="box" id="mental">
+        <h2 class="section-title"><span class="emoji">🧘</span> כללים מנטליים</h2>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">לא הולכים לישון כשהחדר מבולגן 🌙</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">פותחים יום בחדר נקי ומסודר 🌞</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">ניקיון פיזי מושך ניקיון פנימי 🕊️</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">החדר הוא מראה לתודעה – סדר בפנים ובחוץ 🪞</div>
+        </label>
       </div>
 
-      <div class="box">
-        <h2><span class="emo">⏱️</span> "3 דקות זהב" – בכל כניסה</h2>
-        <label class="checklist"><input type="checkbox"/><div>לאתר פריט שאינו במקומו</div></label>
-        <label class="checklist"><input type="checkbox"/><div>להחזירו לנקודת-החזרה שלו</div></label>
-        <label class="checklist"><input type="checkbox"/><div>להכניס אור/אוויר: חלון פתוח או ריח טוב</div></label>
+      <div class="box" id="goldenMinutes">
+        <h2 class="section-title"><span class="emoji">⏱️</span> "3 דקות זהב" – בכל כניסה</h2>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">לאתר פריט שאינו במקומו</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">להחזירו לנקודת-החזרה שלו</div>
+        </label>
+        <label class="checklist"><input type="checkbox" />
+          <div class="item-text">להכניס אור/אוויר: חלון פתוח או ריח טוב</div>
+        </label>
       </div>
     </section>
 
     <section class="box" style="margin-top:8px">
-      <h2><span class="emo">🪄</span> משפט מחזק</h2>
-      <div>אם אינך שולט בסביבה שלך – הסביבה שולטת בך. הפוך את החדר למקדש קטן של שקט ואור 🕯️</div>
+      <h2><span class="emoji">🪄</span> משפט מחזק</h2>
+      <div id="motivation-text">אם אינך שולט בסביבה שלך – הסביבה שולטת בך. הפוך את החדר למקדש קטן של שקט ואור 🕯️</div>
     </section>
 
     <footer>
-      <div class="psuk">"וְהָיָה מַחֲנֶיךָ קָדוֹשׁ" <small>(דברים כ״ג:ט״ו)</small> – חדר מסודר מושך קדושה, רוגע ושמחה.</div>
+      <div class="psuk" id="verse-text">"וְהָיָה מַחֲנֶיךָ קָדוֹשׁ" <small>(דברים כ״ג:ט״ו)</small> – חדר מסודר מושך
+        קדושה, רוגע ושמחה.</div>
       <div class="credits">
-        <span>© CleanFlow (CF)</span>
-        <span>עיצוב ותוכן: <a href="https://github.com/AnLoMinus" target="_blank" rel="noopener">AnLoMinus</a></span>
-        <span>מאגרים קשורים: <a href="https://anlominus.github.io" target="_blank" rel="noopener">AnLoMinus Pages</a></span>
+        <span id="copyright-text">© CleanFlow (CF)</span>
+        <span id="design-text">עיצוב ותוכן: <a href="https://github.com/AnLoMinus" target="_blank"
+            rel="noopener">AnLoMinus</a></span>
+        <span id="related-text">מאגרים קשורים: <a href="https://anlominus.github.io" target="_blank"
+            rel="noopener">AnLoMinus Pages</a></span>
       </div>
-      <div class="note">הערה: ניתן לערוך/להדפיס. תיבות הסימון יתאפסו לאחר רענון הדף.</div>
+      <div class="note" id="footer-note">הערה: ניתן לערוך/להדפיס. תיבות הסימון יתאפסו לאחר רענון הדף.</div>
     </footer>
   </div>
 
+  <script src="assets/js/translator.js"></script>
   <script>
     // זמן ותאריך לועזי
     const now = new Date();
@@ -195,4 +189,5 @@
     // ברירת מחדל הוגדרה: כ״ו בתשרי ה׳תשפ״ו. ניתן לערוך ידנית בשדה span#heb-date.
   </script>
 </body>
+
 </html>
