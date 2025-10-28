@@ -170,5 +170,11 @@
     }
   },
   "active": "d54ad60e2a9591bb",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "scripts/update-version.js",
+    "VERSIONING_ALGORITHM.md",
+    "README-en.md",
+    "READMEem.md",
+    "README copy.md"
+  ]
 }
